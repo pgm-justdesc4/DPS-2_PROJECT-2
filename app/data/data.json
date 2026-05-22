@@ -1,0 +1,40 @@
+{
+  "clothes": [
+    {
+      "id": "AA:02:78:1A",
+      "title": "Leren Motorjack",
+      "brand": "Goosecraft",
+      "description": "Stoer leren motorjack van echt rundleer met asymmetrische rits en meerdere zakken.",
+      "variants": [
+        { "size": "S", "color": "Zwart", "stock": 3 },
+        { "size": "M", "color": "Zwart", "stock": 5 },
+        { "size": "L", "color": "Zwart", "stock": 4 },
+        { "size": "XL", "color": "Zwart", "stock": 2 },
+        { "size": "S", "color": "Donkerbruin", "stock": 2 },
+        { "size": "M", "color": "Donkerbruin", "stock": 4 },
+        { "size": "L", "color": "Donkerbruin", "stock": 3 }
+      ],
+      "price": 249.95,
+      "model": "/link/to/model.glb"
+    },
+    {
+      "id": "C9:CE:13:8E",
+      "title": "Katoenen Polo Shirt",
+      "brand": "Tommy Hilfiger",
+      "description": "Klassiek poloshirt van puur katoen met geborduurde logo, geschikt voor elke gelegenheid.",
+      "variants": [
+        { "size": "S", "color": "Rood", "stock": 10 },
+        { "size": "M", "color": "Rood", "stock": 14 },
+        { "size": "L", "color": "Rood", "stock": 9 },
+        { "size": "XL", "color": "Rood", "stock": 5 },
+        { "size": "S", "color": "Wit", "stock": 8 },
+        { "size": "M", "color": "Wit", "stock": 12 },
+        { "size": "L", "color": "Wit", "stock": 6 },
+        { "size": "M", "color": "Zwart", "stock": 11 },
+        { "size": "L", "color": "Zwart", "stock": 7 }
+      ],
+      "price": 59.99,
+      "model": "/link/to/model.glb"
+    }
+  ]
+}
