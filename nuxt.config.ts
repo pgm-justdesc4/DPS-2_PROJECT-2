@@ -1,9 +1,8 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: false },
   css: ["~/assets/css/main.css"],
-  // Tell Vue's template compiler that all `a-*` tags are A-Frame custom elements
+  // Tell Vue's template compiler that a-* tags are MindAR / A-Frame custom elements
   vue: {
     compilerOptions: {
       isCustomElement: (tag) => tag.startsWith("a-"),
@@ -11,7 +10,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "AR Paskamer | A.S.Adventure",
+      title: "Adventure Fit",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -29,19 +28,14 @@ export default defineNuxtConfig({
         },
       ],
       script: [
-        // 8th Wall – new open-source stack (no app key needed).
-        // Load A-Frame (8-Frame compatible), then XRExtras, then the 8th Wall engine.
-        // ⚠️  8th Wall requires HTTPS – run `nuxt dev --https` or deploy to a secure host.
         {
-          src: "https://aframe.io/releases/1.5.0/aframe.min.js",
+          src: "https://cdn.jsdelivr.net/npm/aframe@1.4.0/dist/aframe-master.min.js",
           defer: false,
         },
         {
-          src: "https://cdn.jsdelivr.net/npm/@8thwall/xrextras@1/dist/xrextras.js",
+          src: "https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js",
           defer: false,
         },
-        // 8th Wall engine is injected by app/plugins/xrweb.client.ts
-        // so that `data-preload-chunks` is set correctly as a DOM attribute.
       ],
     },
   },
