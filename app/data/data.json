@@ -15,7 +15,7 @@
         { "size": "L", "color": "Donkerbruin", "stock": 3 }
       ],
       "price": 249.95,
-      "model": "/link/to/model.glb"
+      "model": "/3d-models/test.glb"
     },
     {
       "id": "C9:CE:13:8E",

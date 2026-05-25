@@ -3,29 +3,28 @@
     <div class="ar-placeholder">
       <ClientOnly>
         <a-scene
-          v-if="sceneReady"
+          v-if="currentProduct !== null"
+          :key="currentProduct ? currentProduct.id : ''"
           id="ar-scene"
           mindar-face
           embedded
           color-space="sRGB"
-          renderer="colorManagement: true; physicallyCorrectLights: true"
+          renderer="colorManagement: true"
           vr-mode-ui="enabled: false"
           device-orientation-permission-ui="enabled: false"
         >
           <a-assets>
             <a-asset-item
-              v-if="currentProduct"
               id="clothing-model"
-              :src="currentProduct.model"
+              :src="currentProduct?.model ?? ''"
             />
           </a-assets>
           <a-camera active="false" position="0 0 0" />
           <a-entity mindar-face-target="anchorIndex: 152">
-            <a-entity
-              v-if="currentProduct"
-              gltf-model="#clothing-model"
-              position="0 -0.5 0"
-              scale="0.5 0.5 0.5"
+            <a-gltf-model
+              src="#clothing-model"
+              position="0 -11 -3"
+              scale="0.007 0.007 0.007"
             />
           </a-entity>
         </a-scene>
@@ -179,17 +178,7 @@ const currentProduct = computed(() =>
     : null,
 );
 
-// ── Delay AR scene mount until layout has settled ────────────────────────
-const sceneReady = ref(false);
 const debugOpen = ref(false);
-
-onMounted(async () => {
-  if (!import.meta.client) return;
-  await nextTick();
-  setTimeout(() => {
-    sceneReady.value = true;
-  }, 150);
-});
 
 // ── RFID via Web Serial API ────────────────────────────────────────────────
 const serialConnected = ref(false);
